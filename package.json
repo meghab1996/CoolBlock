@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "dev": "concurrently -k -n server,client -c cyan,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "dev:phone": "concurrently -k -n server,client -c cyan,magenta \"npm run dev -w server\" \"npm run dev:phone -w client\"",
     "data": "npm run data -w server",
     "build": "npm run build -w client",
     "start": "npm run start -w server",

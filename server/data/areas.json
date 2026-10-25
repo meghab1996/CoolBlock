@@ -1,0 +1,605 @@
+{
+  "generatedAt": "2026-10-25T07:56:00.712Z",
+  "method": "Cooling access score (0–100): average of four indicators, each converted to a percentile rank among the 20 arrondissements (0 = lowest in Paris, 100 = highest): cool spots per km² (cool green spaces + cool facilities), drinking fountains per km², share of land that is a listed cool green space, and city-managed trees per km². Higher means better cooling access relative to other arrondissements. Gap rank 1 = weakest.",
+  "caveats": [
+    "The index is relative: a low score means weaker than other arrondissements, not necessarily inadequate.",
+    "Only cooling spots listed in the City of Paris datasets are counted (no private air-conditioned spaces, shaded streets or courtyards).",
+    "The 12e and 16e include the Bois de Vincennes and Bois de Boulogne, which inflates their area and green space; trees in the woods are not counted.",
+    "No surface temperature, population density or vulnerability data is included yet."
+  ],
+  "sources": [
+    {
+      "id": "arrondissements",
+      "title": "Arrondissements",
+      "url": "https://opendata.paris.fr/explore/dataset/arrondissements/",
+      "records": 20
+    },
+    {
+      "id": "ilots-de-fraicheur-espaces-verts-frais",
+      "title": "Îlots de fraîcheur: espaces verts frais",
+      "url": "https://opendata.paris.fr/explore/dataset/ilots-de-fraicheur-espaces-verts-frais/",
+      "records": 984
+    },
+    {
+      "id": "ilots-de-fraicheur-equipements-activites",
+      "title": "Îlots de fraîcheur: équipements et activités",
+      "url": "https://opendata.paris.fr/explore/dataset/ilots-de-fraicheur-equipements-activites/",
+      "records": 535
+    },
+    {
+      "id": "fontaines-a-boire",
+      "title": "Fontaines à boire",
+      "url": "https://opendata.paris.fr/explore/dataset/fontaines-a-boire/",
+      "records": 1238
+    },
+    {
+      "id": "les-arbres",
+      "title": "Les arbres (count per arrondissement)",
+      "url": "https://opendata.paris.fr/explore/dataset/les-arbres/",
+      "records": 176893,
+      "note": "Trees in the Bois de Boulogne and Bois de Vincennes are listed separately and not counted."
+    }
+  ],
+  "areas": [
+    {
+      "code": 1,
+      "name": "1er",
+      "label": "Louvre",
+      "areaKm2": 1.82,
+      "greenSpaces": 7,
+      "nightOpenGreenSpaces": 4,
+      "facilities": 22,
+      "fountains": 15,
+      "trees": 1683,
+      "coolGreenHa": 31.8,
+      "coolGreenSharePct": 17.5,
+      "perKm2": {
+        "coolingSpots": 15.9,
+        "fountains": 8.2,
+        "trees": 925
+      },
+      "index": {
+        "score": 55,
+        "gapRank": 11,
+        "components": {
+          "coolingDensity": 68,
+          "fountainDensity": 42,
+          "greenShare": 89,
+          "treeDensity": 21
+        }
+      }
+    },
+    {
+      "code": 2,
+      "name": "2e",
+      "label": "Bourse",
+      "areaKm2": 0.99,
+      "greenSpaces": 4,
+      "nightOpenGreenSpaces": 0,
+      "facilities": 3,
+      "fountains": 7,
+      "trees": 598,
+      "coolGreenHa": 0.4,
+      "coolGreenSharePct": 0.4,
+      "perKm2": {
+        "coolingSpots": 7.1,
+        "fountains": 7.1,
+        "trees": 605
+      },
+      "index": {
+        "score": 4,
+        "gapRank": 1,
+        "components": {
+          "coolingDensity": 0,
+          "fountainDensity": 16,
+          "greenShare": 0,
+          "treeDensity": 0
+        }
+      }
+    },
+    {
+      "code": 3,
+      "name": "3e",
+      "label": "Temple",
+      "areaKm2": 1.17,
+      "greenSpaces": 12,
+      "nightOpenGreenSpaces": 1,
+      "facilities": 17,
+      "fountains": 12,
+      "trees": 1297,
+      "coolGreenHa": 2.5,
+      "coolGreenSharePct": 2.2,
+      "perKm2": {
+        "coolingSpots": 24.8,
+        "fountains": 10.3,
+        "trees": 1111
+      },
+      "index": {
+        "score": 49,
+        "gapRank": 8,
+        "components": {
+          "coolingDensity": 95,
+          "fountainDensity": 53,
+          "greenShare": 16,
+          "treeDensity": 32
+        }
+      }
+    },
+    {
+      "code": 4,
+      "name": "4e",
+      "label": "Hôtel-de-Ville",
+      "areaKm2": 1.6,
+      "greenSpaces": 22,
+      "nightOpenGreenSpaces": 10,
+      "facilities": 21,
+      "fountains": 30,
+      "trees": 2950,
+      "coolGreenHa": 5,
+      "coolGreenSharePct": 3.2,
+      "perKm2": {
+        "coolingSpots": 26.9,
+        "fountains": 18.8,
+        "trees": 1848
+      },
+      "index": {
+        "score": 69,
+        "gapRank": 18,
+        "components": {
+          "coolingDensity": 100,
+          "fountainDensity": 95,
+          "greenShare": 26,
+          "treeDensity": 53
+        }
+      }
+    },
+    {
+      "code": 5,
+      "name": "5e",
+      "label": "Panthéon",
+      "areaKm2": 2.53,
+      "greenSpaces": 27,
+      "nightOpenGreenSpaces": 7,
+      "facilities": 24,
+      "fountains": 25,
+      "trees": 3040,
+      "coolGreenHa": 28.5,
+      "coolGreenSharePct": 11.3,
+      "perKm2": {
+        "coolingSpots": 20.1,
+        "fountains": 9.9,
+        "trees": 1201
+      },
+      "index": {
+        "score": 62,
+        "gapRank": 16,
+        "components": {
+          "coolingDensity": 89,
+          "fountainDensity": 47,
+          "greenShare": 74,
+          "treeDensity": 37
+        }
+      }
+    },
+    {
+      "code": 6,
+      "name": "6e",
+      "label": "Luxembourg",
+      "areaKm2": 2.15,
+      "greenSpaces": 16,
+      "nightOpenGreenSpaces": 5,
+      "facilities": 11,
+      "fountains": 16,
+      "trees": 1810,
+      "coolGreenHa": 22.7,
+      "coolGreenSharePct": 10.6,
+      "perKm2": {
+        "coolingSpots": 12.6,
+        "fountains": 7.5,
+        "trees": 843
+      },
+      "index": {
+        "score": 32,
+        "gapRank": 4,
+        "components": {
+          "coolingDensity": 26,
+          "fountainDensity": 24,
+          "greenShare": 63,
+          "treeDensity": 16
+        }
+      }
+    },
+    {
+      "code": 7,
+      "name": "7e",
+      "label": "Palais-Bourbon",
+      "areaKm2": 4.08,
+      "greenSpaces": 27,
+      "nightOpenGreenSpaces": 7,
+      "facilities": 28,
+      "fountains": 32,
+      "trees": 8824,
+      "coolGreenHa": 39.7,
+      "coolGreenSharePct": 9.7,
+      "perKm2": {
+        "coolingSpots": 13.5,
+        "fountains": 7.8,
+        "trees": 2164
+      },
+      "index": {
+        "score": 52,
+        "gapRank": 10,
+        "components": {
+          "coolingDensity": 47,
+          "fountainDensity": 34,
+          "greenShare": 58,
+          "treeDensity": 68
+        }
+      }
+    },
+    {
+      "code": 8,
+      "name": "8e",
+      "label": "Élysée",
+      "areaKm2": 3.87,
+      "greenSpaces": 11,
+      "nightOpenGreenSpaces": 7,
+      "facilities": 23,
+      "fountains": 29,
+      "trees": 7711,
+      "coolGreenHa": 21.6,
+      "coolGreenSharePct": 5.6,
+      "perKm2": {
+        "coolingSpots": 8.8,
+        "fountains": 7.5,
+        "trees": 1993
+      },
+      "index": {
+        "score": 31,
+        "gapRank": 3,
+        "components": {
+          "coolingDensity": 5,
+          "fountainDensity": 24,
+          "greenShare": 32,
+          "treeDensity": 63
+        }
+      }
+    },
+    {
+      "code": 9,
+      "name": "9e",
+      "label": "Opéra",
+      "areaKm2": 2.17,
+      "greenSpaces": 8,
+      "nightOpenGreenSpaces": 2,
+      "facilities": 14,
+      "fountains": 13,
+      "trees": 1440,
+      "coolGreenHa": 1.5,
+      "coolGreenSharePct": 0.7,
+      "perKm2": {
+        "coolingSpots": 10.1,
+        "fountains": 6,
+        "trees": 663
+      },
+      "index": {
+        "score": 5,
+        "gapRank": 2,
+        "components": {
+          "coolingDensity": 11,
+          "fountainDensity": 0,
+          "greenShare": 5,
+          "treeDensity": 5
+        }
+      }
+    },
+    {
+      "code": 10,
+      "name": "10e",
+      "label": "Entrepôt",
+      "areaKm2": 2.88,
+      "greenSpaces": 22,
+      "nightOpenGreenSpaces": 7,
+      "facilities": 14,
+      "fountains": 36,
+      "trees": 3775,
+      "coolGreenHa": 5.4,
+      "coolGreenSharePct": 1.9,
+      "perKm2": {
+        "coolingSpots": 12.5,
+        "fountains": 12.5,
+        "trees": 1309
+      },
+      "index": {
+        "score": 36,
+        "gapRank": 5,
+        "components": {
+          "coolingDensity": 21,
+          "fountainDensity": 68,
+          "greenShare": 11,
+          "treeDensity": 42
+        }
+      }
+    },
+    {
+      "code": 11,
+      "name": "11e",
+      "label": "Popincourt",
+      "areaKm2": 3.65,
+      "greenSpaces": 36,
+      "nightOpenGreenSpaces": 9,
+      "facilities": 24,
+      "fountains": 56,
+      "trees": 6294,
+      "coolGreenHa": 10,
+      "coolGreenSharePct": 2.7,
+      "perKm2": {
+        "coolingSpots": 16.4,
+        "fountains": 15.3,
+        "trees": 1722
+      },
+      "index": {
+        "score": 58,
+        "gapRank": 12,
+        "components": {
+          "coolingDensity": 74,
+          "fountainDensity": 89,
+          "greenShare": 21,
+          "treeDensity": 47
+        }
+      }
+    },
+    {
+      "code": 12,
+      "name": "12e",
+      "label": "Reuilly",
+      "areaKm2": 16.27,
+      "greenSpaces": 225,
+      "nightOpenGreenSpaces": 16,
+      "facilities": 47,
+      "fountains": 104,
+      "trees": 13463,
+      "coolGreenHa": 849.1,
+      "coolGreenSharePct": 52.2,
+      "perKm2": {
+        "coolingSpots": 16.7,
+        "fountains": 6.4,
+        "trees": 828
+      },
+      "index": {
+        "score": 50,
+        "gapRank": 9,
+        "components": {
+          "coolingDensity": 79,
+          "fountainDensity": 8,
+          "greenShare": 100,
+          "treeDensity": 11
+        }
+      }
+    },
+    {
+      "code": 13,
+      "name": "13e",
+      "label": "Gobelins",
+      "areaKm2": 7.13,
+      "greenSpaces": 60,
+      "nightOpenGreenSpaces": 11,
+      "facilities": 31,
+      "fountains": 87,
+      "trees": 18486,
+      "coolGreenHa": 40.9,
+      "coolGreenSharePct": 5.7,
+      "perKm2": {
+        "coolingSpots": 12.8,
+        "fountains": 12.2,
+        "trees": 2593
+      },
+      "index": {
+        "score": 58,
+        "gapRank": 13,
+        "components": {
+          "coolingDensity": 37,
+          "fountainDensity": 63,
+          "greenShare": 37,
+          "treeDensity": 95
+        }
+      }
+    },
+    {
+      "code": 14,
+      "name": "14e",
+      "label": "Observatoire",
+      "areaKm2": 5.6,
+      "greenSpaces": 58,
+      "nightOpenGreenSpaces": 23,
+      "facilities": 28,
+      "fountains": 85,
+      "trees": 12661,
+      "coolGreenHa": 85,
+      "coolGreenSharePct": 15.2,
+      "perKm2": {
+        "coolingSpots": 15.4,
+        "fountains": 15.2,
+        "trees": 2261
+      },
+      "index": {
+        "score": 79,
+        "gapRank": 19,
+        "components": {
+          "coolingDensity": 63,
+          "fountainDensity": 84,
+          "greenShare": 84,
+          "treeDensity": 84
+        }
+      }
+    },
+    {
+      "code": 15,
+      "name": "15e",
+      "label": "Vaugirard",
+      "areaKm2": 8.47,
+      "greenSpaces": 60,
+      "nightOpenGreenSpaces": 15,
+      "facilities": 40,
+      "fountains": 66,
+      "trees": 18522,
+      "coolGreenHa": 69.5,
+      "coolGreenSharePct": 8.2,
+      "perKm2": {
+        "coolingSpots": 11.8,
+        "fountains": 7.8,
+        "trees": 2187
+      },
+      "index": {
+        "score": 44,
+        "gapRank": 7,
+        "components": {
+          "coolingDensity": 16,
+          "fountainDensity": 34,
+          "greenShare": 53,
+          "treeDensity": 74
+        }
+      }
+    },
+    {
+      "code": 16,
+      "name": "16e",
+      "label": "Passy",
+      "areaKm2": 16.32,
+      "greenSpaces": 173,
+      "nightOpenGreenSpaces": 44,
+      "facilities": 34,
+      "fountains": 105,
+      "trees": 18066,
+      "coolGreenHa": 733.3,
+      "coolGreenSharePct": 44.9,
+      "perKm2": {
+        "coolingSpots": 12.7,
+        "fountains": 6.4,
+        "trees": 1107
+      },
+      "index": {
+        "score": 40,
+        "gapRank": 6,
+        "components": {
+          "coolingDensity": 32,
+          "fountainDensity": 8,
+          "greenShare": 95,
+          "treeDensity": 26
+        }
+      }
+    },
+    {
+      "code": 17,
+      "name": "17e",
+      "label": "Batignolles-Monceau",
+      "areaKm2": 5.65,
+      "greenSpaces": 53,
+      "nightOpenGreenSpaces": 13,
+      "facilities": 26,
+      "fountains": 64,
+      "trees": 12710,
+      "coolGreenHa": 40.3,
+      "coolGreenSharePct": 7.1,
+      "perKm2": {
+        "coolingSpots": 14,
+        "fountains": 11.3,
+        "trees": 2249
+      },
+      "index": {
+        "score": 59,
+        "gapRank": 14,
+        "components": {
+          "coolingDensity": 53,
+          "fountainDensity": 58,
+          "greenShare": 47,
+          "treeDensity": 79
+        }
+      }
+    },
+    {
+      "code": 18,
+      "name": "18e",
+      "label": "Buttes-Montmartre",
+      "areaKm2": 5.98,
+      "greenSpaces": 49,
+      "nightOpenGreenSpaces": 3,
+      "facilities": 41,
+      "fountains": 89,
+      "trees": 11512,
+      "coolGreenHa": 36.5,
+      "coolGreenSharePct": 6.1,
+      "perKm2": {
+        "coolingSpots": 15.1,
+        "fountains": 14.9,
+        "trees": 1926
+      },
+      "index": {
+        "score": 59,
+        "gapRank": 15,
+        "components": {
+          "coolingDensity": 58,
+          "fountainDensity": 79,
+          "greenShare": 42,
+          "treeDensity": 58
+        }
+      }
+    },
+    {
+      "code": 19,
+      "name": "19e",
+      "label": "Buttes-Chaumont",
+      "areaKm2": 6.77,
+      "greenSpaces": 44,
+      "nightOpenGreenSpaces": 16,
+      "facilities": 47,
+      "fountains": 88,
+      "trees": 15384,
+      "coolGreenHa": 75.8,
+      "coolGreenSharePct": 11.2,
+      "perKm2": {
+        "coolingSpots": 13.4,
+        "fountains": 13,
+        "trees": 2272
+      },
+      "index": {
+        "score": 68,
+        "gapRank": 17,
+        "components": {
+          "coolingDensity": 42,
+          "fountainDensity": 74,
+          "greenShare": 68,
+          "treeDensity": 89
+        }
+      }
+    },
+    {
+      "code": 20,
+      "name": "20e",
+      "label": "Ménilmontant",
+      "areaKm2": 5.97,
+      "greenSpaces": 67,
+      "nightOpenGreenSpaces": 14,
+      "facilities": 40,
+      "fountains": 122,
+      "trees": 16667,
+      "coolGreenHa": 79,
+      "coolGreenSharePct": 13.2,
+      "perKm2": {
+        "coolingSpots": 17.9,
+        "fountains": 20.4,
+        "trees": 2794
+      },
+      "index": {
+        "score": 91,
+        "gapRank": 20,
+        "components": {
+          "coolingDensity": 84,
+          "fountainDensity": 100,
+          "greenShare": 79,
+          "treeDensity": 100
+        }
+      }
+    }
+  ]
+}

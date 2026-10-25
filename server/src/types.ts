@@ -112,3 +112,17 @@ export interface Weather {
     detail: string;
   };
 }
+
+/** A café, restaurant, bakery or ice-cream shop near a point, from OpenStreetMap. */
+export interface FoodPlace {
+  id: string;
+  name: string;
+  /** "Café", "Bakery", "Restaurant"… */
+  kind: string;
+  /** e.g. "pizza, italian" when OpenStreetMap knows it */
+  cuisine: string | null;
+  lat: number;
+  lng: number;
+  /** Metres from the point that was searched around. */
+  distance: number;
+}
