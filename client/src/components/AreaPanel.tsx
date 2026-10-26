@@ -52,7 +52,7 @@ export default function AreaPanel({ area, areas, aiReady, rec, lang, onLangChang
     return (
       <div className="empty">
         <h2>Pick an arrondissement</h2>
-        <p>Click one on the map or in the ranking to see its cooling indicators and draft a recommendation with AI.</p>
+        <p>Click one on the map or in the ranking to see its cooling indicators and get an action plan from AI.</p>
       </div>
     );
   }
@@ -99,7 +99,7 @@ export default function AreaPanel({ area, areas, aiReady, rec, lang, onLangChang
 
       <section className="rec">
         <div className="rec-head">
-          <h3>Recommendation</h3>
+          <h3>Action plan</h3>
           <label className="lang">
             <span className="visually-hidden">Language</span>
             <select value={lang} onChange={(e) => onLangChange(e.target.value as 'en' | 'fr')}>
@@ -109,15 +109,15 @@ export default function AreaPanel({ area, areas, aiReady, rec, lang, onLangChang
           </label>
         </div>
 
-        {!aiReady && <p className="notice">Add your OpenAI key to server/.env and restart the server to draft recommendations.</p>}
+        {!aiReady && <p className="notice">Add your OpenAI key to server/.env and restart the server to get action plans.</p>}
 
         {(!rec || rec.status === 'error') && (
           <>
             {rec?.status === 'error' && <p className="notice">{rec.error}</p>}
             <button className="primary" onClick={onDraft} disabled={!aiReady}>
-              {rec?.status === 'error' ? 'Try again' : 'Draft recommendation'}
+              {rec?.status === 'error' ? 'Try again' : 'Get an action plan'}
             </button>
-            <p className="muted small">Uses this arrondissement's figures and the selected weather period.</p>
+            <p className="muted small">AI suggests what the city could do here, using this arrondissement's figures and the selected weather period.</p>
           </>
         )}
 

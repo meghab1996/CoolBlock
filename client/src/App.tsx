@@ -3,12 +3,14 @@ import { api, ApiError } from './api';
 import type { AreasResponse, CoolingPoint, Health, Recommendation, Weather, WeatherSelection } from './types';
 import TopBar from './components/TopBar';
 import WeatherPanel from './components/WeatherPanel';
+import MobileNav, { isStacked, showSection } from './components/MobileNav';
 import Ledger from './components/Ledger';
 import CoolingMap, { type LayerState } from './components/CoolingMap';
 import AreaPanel from './components/AreaPanel';
 import ComparePanel from './components/ComparePanel';
 import AiAssistant from './components/AiAssistant';
 import ReportView from './components/ReportView';
+import Intro from './components/Intro';
 
 type Tab = 'area' | 'compare' | 'ask';
 
@@ -93,6 +95,7 @@ export default function App() {
 
   const select = (code: number | null) => {
     setSelected(code);
+    if (code && isStacked()) showSection('details');
     if (code && tab === 'compare') return;
     if (code) setTab((t) => (t === 'ask' ? t : 'area'));
   };
@@ -193,6 +196,8 @@ export default function App() {
           onClose={() => setReportOpen(false)}
         />
       )}
+      <MobileNav />
+      <Intro />
     </div>
   );
 }
