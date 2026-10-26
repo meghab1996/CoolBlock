@@ -183,6 +183,13 @@ export default function App() {
           </div>
         </aside>
       </main>
+       <footer className="app-footer">
+        Built with{' '}
+        <a href="https://openai.com" target="_blank" rel="noopener noreferrer">
+          OpenAI
+        </a>
+        . Action plans and Ask AI answers are written with {health?.ai.model ?? 'an OpenAI model'}.
+      </footer>
 
       {reportOpen && selectedArea && data && recs[recKey]?.data && (
         <ReportView
