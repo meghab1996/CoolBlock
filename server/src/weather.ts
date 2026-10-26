@@ -190,8 +190,12 @@ export async function getMayJuneWeather(year: number): Promise<Weather> {
     const j = (await fetchOpenMeteo(`https://archive-api.open-meteo.com/v1/archive?${qs}`, 20_000)) as { daily: DailyResponse };
     daily = toDaily(j.daily);
     if (daily.length < 50) throw new Error(`Open-Meteo returned only ${daily.length} days for May–June ${year}.`);
-    mkdirSync(WEATHER_DIR, { recursive: true });
-    await writeFile(file, JSON.stringify(daily));
+    try {
+      mkdirSync(WEATHER_DIR, { recursive: true });
+      await writeFile(file, JSON.stringify(daily));
+    } catch {
+      // Read-only file system (e.g. on Vercel): carry on without saving a copy.
+    }
   }
 
   const data: Weather = {
