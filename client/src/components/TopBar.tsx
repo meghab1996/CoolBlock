@@ -1,4 +1,5 @@
 import type { Health, WeatherSelection } from '../types';
+import EmergencyButton from './EmergencyButton';
 
 interface Props {
   health: Health | null;
@@ -65,6 +66,7 @@ export default function TopBar({ health, weatherSel, onWeatherChange }: Props) {
             {health.ai.configured ? `AI on, ${health.ai.model}` : 'AI off: no API key'}
           </span>
         )}
+        <EmergencyButton />
       </div>
     </header>
   );

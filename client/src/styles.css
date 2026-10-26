@@ -2215,3 +2215,582 @@ td.below {
     padding: 0.4rem;
   }
 }
+
+/* ---------- emergency numbers (Step 17) ---------- */
+
+.sos-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.85rem 0.35rem 0.7rem;
+  border: 0;
+  border-radius: 999px;
+  background: #c62828;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sos-open:hover {
+  background: #a51f1f;
+}
+
+.sos-open svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.sos-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3500;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  overflow-y: auto;
+  background: rgba(29, 40, 48, 0.55);
+}
+
+.sos {
+  width: 100%;
+  max-width: 540px;
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.25rem;
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.sos-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.sos-head h2 {
+  font-size: var(--step-2);
+}
+
+.sos-calls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.sos-call {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 0.2rem;
+  padding: 1rem 0.75rem;
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+
+.sos-call.ambulance {
+  background: #c62828;
+}
+
+.sos-call.police {
+  background: #1f4fa3;
+}
+
+/* The icons draw their details in the button's colour. */
+.sos-call.ambulance svg {
+  color: #c62828;
+}
+
+.sos-call.police svg {
+  color: #1f4fa3;
+}
+
+.sos-call:hover {
+  filter: brightness(1.08);
+}
+
+.sos-call svg {
+  width: 44px;
+  height: 44px;
+}
+
+.sos-label {
+  font-weight: 700;
+  font-size: var(--step-1);
+}
+
+.sos-number {
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.sos-what {
+  font-size: var(--step--1);
+  opacity: 0.92;
+}
+
+.sos-hint,
+.sos-advice {
+  font-size: var(--step--1);
+  color: var(--ink-2);
+}
+
+.sos-more {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.sos-more li {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr;
+  align-items: baseline;
+}
+
+.sos-more a {
+  font-weight: 800;
+  color: #c62828;
+}
+
+.sos-heat {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.7rem 0.9rem;
+  border-left: 4px solid #c2410c;
+  border-radius: var(--radius);
+  background: var(--warn-bg);
+  color: var(--warn-ink);
+  font-size: var(--step--1);
+}
+
+.sos-heat h3 {
+  font-size: var(--step-0);
+}
+
+.sos-advice a {
+  font-weight: 700;
+  color: var(--teal-ink);
+  white-space: nowrap;
+}
+
+.games-head {
+  flex-wrap: wrap;
+}
+
+.games-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .sos-overlay {
+    padding: 0.6rem;
+    place-items: start center;
+  }
+  .sos {
+    padding: 1rem;
+  }
+  .sos-call {
+    padding: 0.85rem 0.5rem;
+  }
+}
+/* ---------- UI polish (Step 18) ---------- */
+
+:root {
+  accent-color: var(--teal); /* checkboxes and sliders in shade teal instead of browser blue */
+  --radius: 8px;
+  --radius-lg: 12px;
+  --zinc-top: #5a6a74;
+  --zinc-bottom: #4a5961;
+  --float: 0 1px 2px rgba(29, 40, 48, 0.08), 0 8px 24px rgba(29, 40, 48, 0.12);
+}
+
+::selection {
+  background: #bfe3df;
+  color: var(--ink);
+}
+
+.rail,
+.panel-body,
+.chat-log,
+.leaflet-popup-scrolled {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+/* Top bar: a Paris zinc roof, standing seams and all */
+.topbar {
+  background:
+    repeating-linear-gradient(90deg, transparent 0 63px, rgba(255, 255, 255, 0.07) 63px 64px, rgba(0, 0, 0, 0.16) 64px 65px),
+    linear-gradient(180deg, var(--zinc-top), var(--zinc-bottom));
+  border-bottom: 1px solid #3c4a52;
+  color: #fff;
+}
+
+.brand h1 {
+  color: #fff;
+}
+
+.brand p {
+  color: #e3eaed;
+}
+
+.brand-mark {
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.topbar :focus-visible,
+.topbar .segmented label:has(input:focus-visible) {
+  outline-color: #fff;
+}
+
+.topbar .segmented {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.topbar .segmented label {
+  color: #e3eaed;
+  white-space: nowrap;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.topbar .segmented label:hover {
+  color: #fff;
+}
+
+.topbar .segmented label.on {
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.topbar select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0.35rem 1.8rem 0.35rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(0, 0, 0, 0.2)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23fff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    no-repeat right 0.65rem center / 10px 7px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.topbar select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.topbar select option {
+  color: var(--ink);
+  background: var(--surface);
+}
+
+.topbar .ai-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+}
+
+.topbar .ai-status::before {
+  content: '';
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d65a2a;
+}
+
+.topbar .ai-status.ok {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.26);
+  color: #fff;
+}
+
+.topbar .ai-status.ok::before {
+  background: #7ce3bb;
+  box-shadow: 0 0 0 3px rgba(124, 227, 187, 0.25);
+}
+
+.topbar .sos-open {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+/* Buttons answer the press */
+button.primary,
+button.ghost,
+.sos-open,
+.map-locate,
+.map-reset,
+.suggestion,
+.ledger-row,
+.tab,
+.spot-popup .navigate,
+.spot-share .share-main {
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s, box-shadow 0.15s, transform 0.08s;
+}
+
+button.primary:active:not(:disabled),
+button.ghost:active:not(:disabled),
+.sos-open:active,
+.map-locate:active:not(:disabled),
+.map-reset:active,
+.spot-popup .navigate:active,
+.spot-share .share-main:active {
+  transform: translateY(1px);
+}
+
+button.primary {
+  box-shadow: 0 1px 2px rgba(11, 85, 81, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+button.ghost:hover:not(:disabled) {
+  border-color: var(--ink-2);
+}
+
+/* Ranking */
+.ledger-row {
+  border-radius: var(--radius);
+}
+
+.ledger-row.selected .ledger-rank,
+.ledger-row.selected .ledger-name strong {
+  color: var(--teal-ink);
+}
+
+.ledger-row.selected .ledger-rank {
+  font-weight: 700;
+}
+
+.ledger-bar {
+  height: 7px;
+  background: #e7ecee;
+}
+
+.ledger-bar,
+.ledger-bar span,
+.compare-bar .track,
+.compare-bar .track span {
+  border-radius: 999px;
+}
+
+/* Map: frosted boxes that float above the dots */
+.map-card {
+  background: rgba(251, 252, 252, 0.86);
+  -webkit-backdrop-filter: blur(10px) saturate(1.2);
+  backdrop-filter: blur(10px) saturate(1.2);
+  border-color: rgba(185, 197, 203, 0.7);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--float);
+}
+
+.map-locate,
+.map-reset {
+  box-shadow: var(--float);
+}
+
+.map-locate:hover:not(:disabled) {
+  border-color: var(--teal);
+  background: var(--teal-wash);
+}
+
+.map-reset:hover {
+  background: #31414b;
+}
+
+.map-wrap .leaflet-bar,
+.map-wrap .leaflet-touch .leaflet-bar {
+  border: 1px solid rgba(185, 197, 203, 0.7);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--float);
+  overflow: hidden;
+}
+
+.map-wrap .leaflet-bar a {
+  color: var(--ink);
+  background: rgba(251, 252, 252, 0.94);
+  border-bottom-color: var(--line);
+}
+
+.map-wrap .leaflet-bar a:hover {
+  background: var(--surface-2);
+}
+
+.map-wrap .leaflet-popup-content-wrapper {
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(29, 40, 48, 0.08), 0 16px 40px rgba(29, 40, 48, 0.2);
+}
+
+.map-wrap .leaflet-popup-tip {
+  box-shadow: none;
+}
+
+.map-wrap .leaflet-container a.leaflet-popup-close-button {
+  top: 6px;
+  right: 6px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 26px;
+  color: var(--muted);
+}
+
+.map-wrap .leaflet-container a.leaflet-popup-close-button:hover {
+  background: var(--surface-2);
+  color: var(--ink);
+}
+
+.spot-popup > strong {
+  padding-right: 0.6rem;
+}
+
+/* A long spot card fades out at the bottom edge, so it's clear there's more below */
+@property --popup-fade {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 32px;
+}
+
+@keyframes popup-fade {
+  0%,
+  85% {
+    --popup-fade: 32px;
+  }
+  100% {
+    --popup-fade: 0px;
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  .leaflet-popup-scrolled {
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - var(--popup-fade)), transparent);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - var(--popup-fade)), transparent);
+    animation: popup-fade linear both;
+    animation-timeline: scroll(self);
+  }
+}
+
+/* Right panel */
+.tab {
+  border-radius: 6px 6px 0 0;
+}
+
+.tab:hover {
+  color: var(--ink);
+  background: var(--surface-2);
+}
+
+.tab[aria-selected='true'] {
+  border-bottom-width: 3px;
+}
+
+.empty {
+  padding: 1rem 1.15rem 1.1rem 3.3rem;
+  border: 1.5px dashed var(--line-strong);
+  border-radius: var(--radius-lg);
+  background: var(--surface-2)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7z' fill='%230f6e6a'/%3E%3Ccircle cx='12' cy='9' r='2.6' fill='%23fbfcfc'/%3E%3C/svg%3E")
+    no-repeat 1.05rem 1.05rem / 22px 22px;
+}
+
+.below-tag {
+  width: max-content;
+  margin-top: 0.2rem;
+  padding: 0 0.45rem;
+  border: 1px solid #f2c7aa;
+  border-radius: 999px;
+  background: var(--warn-bg);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.suggestion {
+  background: var(--surface);
+  border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) 4px;
+  padding: 0.55rem 0.8rem;
+  box-shadow: 0 1px 2px rgba(29, 40, 48, 0.05);
+}
+
+.chat-form textarea:focus-visible,
+.compare-pick select:focus-visible,
+.rec-head select:focus-visible {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px #bfe3df;
+}
+
+/* Tablets and phones: the tabs stay in reach while you scroll the details */
+@media (max-width: 980px) {
+  .tabs {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--surface);
+  }
+}
+
+/* Phones: brand and Emergency on one line, the period controls under them */
+@media (max-width: 640px) {
+  .topbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.65rem 0.5rem;
+    padding: 0.75rem 1rem 0.8rem;
+  }
+
+  .topbar-controls {
+    display: contents;
+  }
+
+  .topbar .brand {
+    flex: 1 1 190px;
+    min-width: 0;
+  }
+
+  .topbar .sos-open {
+    order: 1;
+  }
+
+  .topbar .segmented,
+  .topbar .year-select,
+  .topbar .ai-status {
+    order: 2;
+  }
+
+  /* "AI on" is enough on a small screen; the model name is in the Ask AI tab */
+  .topbar .ai-status {
+    font-size: 0;
+    gap: 0.35rem;
+    padding: 0.35rem 0.6rem;
+  }
+
+  .topbar .ai-status.ok::after {
+    content: 'AI on';
+    content: 'AI on' / '';
+    font-size: 0.75rem;
+  }
+
+  .topbar .ai-status.off::after {
+    content: 'AI off';
+    content: 'AI off' / '';
+    font-size: 0.75rem;
+  }
+
+  .map-card {
+    border-radius: 10px;
+  }
+}

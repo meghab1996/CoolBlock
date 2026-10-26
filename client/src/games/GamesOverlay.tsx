@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import Ludo from './Ludo';
 import Minesweeper from './Minesweeper';
 import Poker from './Poker';
+import EmergencyButton from '../components/EmergencyButton';
 
 type GameId = 'ludo' | 'mines' | 'poker';
 const GAMES: { id: GameId; label: string }[] = [
@@ -48,9 +49,12 @@ export default function GamesOverlay({ open, onClose }: Props) {
           <h2 id="games-title">Play while you wait</h2>
           <p className="muted">Stay in the shade, drink some water.</p>
         </div>
-        <button ref={closeRef} type="button" className="ghost" onClick={onClose}>
-          Back to map
-        </button>
+        <div className="games-head-actions">
+          <EmergencyButton />
+          <button ref={closeRef} type="button" className="ghost" onClick={onClose}>
+            Back to map
+          </button>
+        </div>
       </header>
       <div className="games-tabs" role="tablist" aria-label="Games">
         {GAMES.map((g) => (
